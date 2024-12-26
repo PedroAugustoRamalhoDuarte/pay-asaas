@@ -1,3 +1,6 @@
+inherit_gem:
+  switchcop: rubocop.yml
+
 AllCops:
   TargetRubyVersion: 3.0
 
