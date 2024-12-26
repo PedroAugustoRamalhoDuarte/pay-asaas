@@ -34,7 +34,7 @@ module Pay::Asaas
     end
 
     def error_handler(response)
-      return unless response.code != 200
+      return if response.code == 200
       raise StandardError, response["errors"].first["description"] if response["errors"].present?
 
       Rails.logger.error "Asaas API Error: #{response.code} - #{response.body}"

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "pay/asaas"
 
 RSpec.configure do |config|
