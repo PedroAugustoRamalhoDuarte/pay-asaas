@@ -45,3 +45,7 @@ group :development do
 end
 
 gem "pay", "~> 8.3"
+
+gem "pay-asaas", path: "../.."
+
+gem "dotenv"
