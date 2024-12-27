@@ -1,5 +1,13 @@
 require "pay/asaas"
 
+# Add this to spec/spec_helper.rb
+ENV["RAILS_ENV"] ||= "test"
+require File.expand_path("../dummy/config/environment", __FILE__)
+
+ENV["RAILS_ROOT"] ||= "#{File.dirname(__FILE__)}../../../spec/dummy"
+
+require "rspec/rails"
+
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"

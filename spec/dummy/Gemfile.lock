@@ -1,9 +1,3 @@
-PATH
-  remote: .
-  specs:
-    pay-asaas (0.1.0)
-      pay (~> 8)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,16 +74,31 @@ GEM
       uri (>= 0.13.1)
     ast (2.4.2)
     base64 (0.2.0)
+    bcrypt_pbkdf (1.1.1)
+    bcrypt_pbkdf (1.1.1-arm64-darwin)
+    bcrypt_pbkdf (1.1.1-x86_64-darwin)
     benchmark (0.4.0)
     bigdecimal (3.1.9)
+    bindex (0.8.1)
+    brakeman (6.2.2)
+      racc
     builder (3.3.0)
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.4.1)
-    diff-lcs (1.5.1)
+    debug (1.10.0)
+      irb (~> 1.10)
+      reline (>= 0.3.8)
+    dotenv (3.1.7)
     drb (2.2.1)
+    ed25519 (1.3.0)
     erubi (1.13.1)
+    et-orbi (1.2.11)
+      tzinfo
+    fugit (1.11.1)
+      et-orbi (~> 1, >= 1.2.11)
+      raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
@@ -98,7 +107,21 @@ GEM
     irb (1.14.3)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
+    jbuilder (2.13.0)
+      actionview (>= 5.0.0)
+      activesupport (>= 5.0.0)
     json (2.9.1)
+    kamal (2.4.0)
+      activesupport (>= 7.0)
+      base64 (~> 0.2)
+      bcrypt_pbkdf (~> 1.0)
+      concurrent-ruby (~> 1.2)
+      dotenv (~> 3.1)
+      ed25519 (~> 1.2)
+      net-ssh (~> 7.3)
+      sshkit (>= 1.23.0, < 2.0)
+      thor (~> 1.3)
+      zeitwerk (>= 2.6.18, < 3.0)
     language_server-protocol (3.17.0.3)
     logger (1.6.4)
     loofah (2.23.1)
@@ -119,8 +142,13 @@ GEM
       net-protocol
     net-protocol (0.2.2)
       timeout
+    net-scp (4.0.0)
+      net-ssh (>= 2.6.5, < 8.0.0)
+    net-sftp (4.0.0)
+      net-ssh (>= 5.0.0, < 8.0.0)
     net-smtp (0.5.0)
       net-protocol
+    net-ssh (7.3.0)
     nio4r (2.7.4)
     nokogiri (1.18.0-aarch64-linux-gnu)
       racc (~> 1.4)
@@ -138,15 +166,24 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.0-x86_64-linux-musl)
       racc (~> 1.4)
+    ostruct (0.6.1)
     parallel (1.26.3)
     parser (3.3.6.0)
       ast (~> 2.4.1)
       racc
     pay (8.3.0)
       rails (>= 6.0.0)
+    propshaft (1.1.0)
+      actionpack (>= 7.0.0)
+      activesupport (>= 7.0.0)
+      rack
+      railties (>= 7.0.0)
     psych (5.2.2)
       date
       stringio
+    puma (6.5.0)
+      nio4r (~> 2.0)
+    raabro (1.4.0)
     racc (1.8.1)
     rack (3.1.8)
     rack-session (2.0.0)
@@ -191,27 +228,6 @@ GEM
     regexp_parser (2.10.0)
     reline (0.6.0)
       io-console (~> 0.5)
-    rspec (3.13.0)
-      rspec-core (~> 3.13.0)
-      rspec-expectations (~> 3.13.0)
-      rspec-mocks (~> 3.13.0)
-    rspec-core (3.13.2)
-      rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.3)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.13.0)
-    rspec-mocks (3.13.2)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.13.0)
-    rspec-rails (6.0.4)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      railties (>= 6.1)
-      rspec-core (~> 3.12)
-      rspec-expectations (~> 3.12)
-      rspec-mocks (~> 3.12)
-      rspec-support (~> 3.12)
-    rspec-support (3.13.2)
     rubocop (1.69.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -224,8 +240,9 @@ GEM
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.37.0)
       parser (>= 3.3.1.0)
-    rubocop-factory_bot (2.26.1)
-      rubocop (~> 1.61)
+    rubocop-minitest (0.36.0)
+      rubocop (>= 1.61, < 2.0)
+      rubocop-ast (>= 1.31.1, < 2.0)
     rubocop-performance (1.23.0)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
@@ -234,15 +251,29 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.52.0, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-rspec (3.3.0)
-      rubocop (~> 1.61)
-    rubocop-rspec_rails (2.30.0)
-      rubocop (~> 1.61)
-      rubocop-rspec (~> 3, >= 3.0.1)
-    rubocop-shopify (2.15.1)
-      rubocop (~> 1.51)
+    rubocop-rails-omakase (1.0.0)
+      rubocop
+      rubocop-minitest
+      rubocop-performance
+      rubocop-rails
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
+    solid_cable (3.0.5)
+      actioncable (>= 7.2)
+      activejob (>= 7.2)
+      activerecord (>= 7.2)
+      railties (>= 7.2)
+    solid_cache (1.0.6)
+      activejob (>= 7.2)
+      activerecord (>= 7.2)
+      railties (>= 7.2)
+    solid_queue (1.1.0)
+      activejob (>= 7.1)
+      activerecord (>= 7.1)
+      concurrent-ruby (>= 1.3.1)
+      fugit (~> 1.11.0)
+      railties (>= 7.1)
+      thor (~> 1.3.1)
     sqlite3 (2.5.0-aarch64-linux-gnu)
     sqlite3 (2.5.0-aarch64-linux-musl)
     sqlite3 (2.5.0-arm-linux-gnu)
@@ -251,16 +282,19 @@ GEM
     sqlite3 (2.5.0-x86_64-darwin)
     sqlite3 (2.5.0-x86_64-linux-gnu)
     sqlite3 (2.5.0-x86_64-linux-musl)
+    sshkit (1.23.2)
+      base64
+      net-scp (>= 1.1.2)
+      net-sftp (>= 2.1.2)
+      net-ssh (>= 2.8.0)
+      ostruct
     stringio (3.1.2)
-    switchcop (0.2.1)
-      rubocop (~> 1.69)
-      rubocop-factory_bot (~> 2.26)
-      rubocop-performance (~> 1.23)
-      rubocop-rails (~> 2.27)
-      rubocop-rspec (~> 3.3)
-      rubocop-rspec_rails (~> 2.30)
-      rubocop-shopify (= 2.15.1)
     thor (1.3.2)
+    thruster (0.1.9)
+    thruster (0.1.9-aarch64-linux)
+    thruster (0.1.9-arm64-darwin)
+    thruster (0.1.9-x86_64-darwin)
+    thruster (0.1.9-x86_64-linux)
     timeout (0.4.3)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -269,12 +303,18 @@ GEM
     unicode-emoji (4.0.4)
     uri (1.0.2)
     useragent (0.16.11)
+    web-console (4.2.1)
+      actionview (>= 6.0.0)
+      activemodel (>= 6.0.0)
+      bindex (>= 0.4.0)
+      railties (>= 6.0.0)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     zeitwerk (2.7.1)
 
 PLATFORMS
+  aarch64-linux
   aarch64-linux-gnu
   aarch64-linux-musl
   arm-linux-gnu
@@ -285,12 +325,22 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  pay-asaas!
-  rake (~> 13.0)
-  rspec (~> 3.0)
-  rspec-rails (~> 6.0.0)
-  sqlite3
-  switchcop
+  brakeman
+  debug
+  jbuilder
+  kamal
+  pay (~> 8.3)
+  propshaft
+  puma (>= 5.0)
+  rails (~> 8.0.1)
+  rubocop-rails-omakase
+  solid_cable
+  solid_cache
+  solid_queue
+  sqlite3 (>= 2.1)
+  thruster
+  tzinfo-data
+  web-console
 
 BUNDLED WITH
    2.5.22

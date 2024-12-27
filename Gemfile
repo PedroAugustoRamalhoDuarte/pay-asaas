@@ -8,3 +8,7 @@ gem "rake", "~> 13.0"
 gem "rspec", "~> 3.0"
 
 gem "switchcop", require: false
+
+# For dummy test app
+
+gem "sqlite3"
