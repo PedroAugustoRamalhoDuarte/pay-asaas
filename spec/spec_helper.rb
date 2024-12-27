@@ -7,6 +7,8 @@ require File.expand_path("../dummy/config/environment", __FILE__)
 ENV["RAILS_ROOT"] ||= "#{File.dirname(__FILE__)}../../../spec/dummy"
 
 require "rspec/rails"
+require "webmock/rspec"
+require "support/vcr"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -17,5 +19,10 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  config.before(:suite) do
+    Rails.logger = Logger.new($stdout)
+    Rails.logger.level = Logger::ERROR
   end
 end

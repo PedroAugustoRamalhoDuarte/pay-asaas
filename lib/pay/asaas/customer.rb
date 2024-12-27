@@ -1,3 +1,5 @@
+require "pay/asaas/api/customer"
+
 module Pay
   module Asaas
     class Customer < Pay::Customer
@@ -15,7 +17,7 @@ module Pay
         if processor_id?
           Pay::Asaas::Api::Customer.find(id: processor_id)
         else
-          customer_response = Pay::Asaas::Api::Customer.create(api_record_attributes)
+          customer_response = Pay::Asaas::Api::Customer.create(params: api_record_attributes)
           update!(processor_id: customer_response["id"]) # TODO: is not updating
           customer_response
         end
@@ -36,9 +38,8 @@ module Pay
           processor_id: processor_id,
           amount: amount,
           other_params: options.merge(dueDate: Time.zone.today.to_s),
-          )
+        )
 
-        Rails.logger.debug transaction
         attrs = {
           amount: amount,
         }

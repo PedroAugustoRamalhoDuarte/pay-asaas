@@ -6,3 +6,6 @@ AllCops:
 
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+
+Rails/SkipsModelValidations:
+  Enabled: false

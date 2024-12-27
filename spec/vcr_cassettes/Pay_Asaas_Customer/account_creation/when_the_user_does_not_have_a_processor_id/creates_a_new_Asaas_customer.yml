@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.asaas.com/api/v3/customers
+    body:
+      encoding: UTF-8
+      string: '{"email":"test@test.com","name":"Pedro Silva","cpfCnpj":null,"externalReference":38,"notificationDisabled":true}'
+    headers:
+      Access-Token:
+      - "<ASAAS_API_KEY>"
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 27 Dec 2024 14:29:48 GMT
+      Set-Cookie:
+      - AWSALB=Q8g8KEYmxhYJpuW+ijvgbWU4KvLVJkEN5XD7LL7Xiz/uaQupL5iYvqOcCsrHDFMeWD9mjZvZkja/xTRc7n5E/ETXOHp6eQ4mToIgjUwdLql3SqFBv1nR2BpBAFHG;
+        Expires=Fri, 03 Jan 2025 14:29:48 GMT; Path=/
+      - AWSALBCORS=Q8g8KEYmxhYJpuW+ijvgbWU4KvLVJkEN5XD7LL7Xiz/uaQupL5iYvqOcCsrHDFMeWD9mjZvZkja/xTRc7n5E/ETXOHp6eQ4mToIgjUwdLql3SqFBv1nR2BpBAFHG;
+        Expires=Fri, 03 Jan 2025 14:29:48 GMT; Path=/; SameSite=None; Secure
+      - AWSALBTG=Jh3pUfal108Uwc/yJbtGWbdUkZjTXUr7uhUrS9/OMg56/85RYbgfOdgyoo32KfVu+xvTjKv7rHECHwCsZliwzeSowJocMlAqT8GsUZzgxznHWSlOj7lO8prhXhI13aFRHbvrFuEkTvk0c6a3UtpB+2Chd8EgjF5l7WNWqSoJrbmv;
+        Expires=Fri, 03 Jan 2025 14:29:48 GMT; Path=/
+      - AWSALBTGCORS=Jh3pUfal108Uwc/yJbtGWbdUkZjTXUr7uhUrS9/OMg56/85RYbgfOdgyoo32KfVu+xvTjKv7rHECHwCsZliwzeSowJocMlAqT8GsUZzgxznHWSlOj7lO8prhXhI13aFRHbvrFuEkTvk0c6a3UtpB+2Chd8EgjF5l7WNWqSoJrbmv;
+        Expires=Fri, 03 Jan 2025 14:29:48 GMT; Path=/; SameSite=None; Secure
+      - JSESSIONID=5EBB04601A45313BCAE683B9EFE7BB5F72C548B54E0B8D5A1BEE602E919E83016E7E055B6DFE1DA98F669D853DC66FD624A2ECB8BD539210ADA105DA22F1D3EB.n1;
+        Path=/; Secure; HttpOnly
+      Server:
+      - nginx
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 5175bccf249c3bfd50c4e26a52e658c8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - GRU1-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - CyLkp1G3biTtQXrcsDKCfoCSJcTMfYHOVZqbf65-TLN5AKApN-9oUA==
+    body:
+      encoding: UTF-8
+      string: '{"object":"customer","id":"cus_000006417921","dateCreated":"2024-12-27","name":"Pedro
+        Silva","email":"test@test.com","company":null,"phone":null,"mobilePhone":null,"address":null,"addressNumber":null,"complement":null,"province":null,"postalCode":null,"cpfCnpj":null,"personType":null,"deleted":false,"additionalEmails":null,"externalReference":"38","notificationDisabled":true,"observations":null,"municipalInscription":null,"stateInscription":null,"canDelete":true,"cannotBeDeletedReason":null,"canEdit":true,"cannotEditReason":null,"city":null,"cityName":null,"state":null,"country":"Brasil"}'
+  recorded_at: Fri, 27 Dec 2024 14:29:48 GMT
+recorded_with: VCR 6.3.1
