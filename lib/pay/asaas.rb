@@ -1,8 +1,8 @@
 require_relative "asaas/version"
+require_relative "asaas/inflections"
 
 module Pay
   module Asaas
-    class Error < StandardError; end
-    # Your code goes here...
+    autoload :Customer, "pay/asaas/customer"
   end
 end

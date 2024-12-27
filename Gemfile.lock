@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     pay-asaas (0.1.0)
+      activesupport
       pay (~> 8)
 
 GEM
@@ -285,6 +286,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  pay
   pay-asaas!
   rake (~> 13.0)
   rspec (~> 3.0)
