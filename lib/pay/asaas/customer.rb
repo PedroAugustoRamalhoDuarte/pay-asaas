@@ -12,7 +12,6 @@ module Pay
         { email: email, name: customer_name, cpfCnpj: owner.document, externalReference: owner.id }
       end
 
-      # TODO: what to return in this method?
       def api_record
         if processor_id?
           Pay::Asaas::Api::Customer.find(id: processor_id)
@@ -21,10 +20,9 @@ module Pay
           update!(processor_id: customer_response["id"]) # TODO: is not updating
           customer_response
         end
-      rescue => e
-        # TODO: Handle error better
+      rescue ApiClient::ApiError, ActiveRecordError => e
         Rails.logger.error "[Pay] Error creating Asaas customer: #{e.message}"
-        # raise Pay::Stripe::Error, e
+        raise Pay::Asaas::Error, e.message
       end
 
       def update_api_record(**attributes)

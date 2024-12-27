@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.asaas.com/api/v3/customers
+    body:
+      encoding: UTF-8
+      string: '{"email":"test@test.com","name":null,"cpfCnpj":null,"externalReference":1,"notificationDisabled":true}'
+    headers:
+      Access-Token:
+      - "<ASAAS_API_KEY>"
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 27 Dec 2024 18:18:01 GMT
+      Set-Cookie:
+      - AWSALB=YSWYZd9hz+5pDqv/KQPfj9zyhkk48rlk2PlWInJNF0ub1uCoqH1G4S47WlmoR2ayAetVzf/4GvevKu1B7MezIgsWl2G3iFeyTS2cgyzpddTZuEH4CEWHaDoGrDuu;
+        Expires=Fri, 03 Jan 2025 18:18:01 GMT; Path=/
+      - AWSALBCORS=YSWYZd9hz+5pDqv/KQPfj9zyhkk48rlk2PlWInJNF0ub1uCoqH1G4S47WlmoR2ayAetVzf/4GvevKu1B7MezIgsWl2G3iFeyTS2cgyzpddTZuEH4CEWHaDoGrDuu;
+        Expires=Fri, 03 Jan 2025 18:18:01 GMT; Path=/; SameSite=None; Secure
+      - AWSALBTG=i5usbBdLwYn+nMv/pRh0rqdixfcsRE5Hnvh0dEwPDvcq+GaxIYgaPRrbdxT+qmS9mOHJtjRF8Q4EPjhqnDswBaFaQFd1KJhr9nXh0yc4lJp0tnrTFGw8VHIyitUJj/zkpzgvZzk1JCbYgjQ4vgoDYOzqSLzq1rFBotUnamLNDqJh;
+        Expires=Fri, 03 Jan 2025 18:18:01 GMT; Path=/
+      - AWSALBTGCORS=i5usbBdLwYn+nMv/pRh0rqdixfcsRE5Hnvh0dEwPDvcq+GaxIYgaPRrbdxT+qmS9mOHJtjRF8Q4EPjhqnDswBaFaQFd1KJhr9nXh0yc4lJp0tnrTFGw8VHIyitUJj/zkpzgvZzk1JCbYgjQ4vgoDYOzqSLzq1rFBotUnamLNDqJh;
+        Expires=Fri, 03 Jan 2025 18:18:01 GMT; Path=/; SameSite=None; Secure
+      Server:
+      - nginx
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 8705ba1e9b560c781934dd7ac7e31108.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - GIG51-P3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - zADrgWLzNstGm5jQm206U5wfN3r8aGO3q1dGcPNkKgHravWBdX4JFQ==
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"code":"invalid_name","description":"O campo name deve
+        ser informado"}]}'
+  recorded_at: Fri, 27 Dec 2024 18:18:01 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.asaas.com/api/v3/customers
+    body:
+      encoding: UTF-8
+      string: '{"email":"test@test.com","name":"Pedro Silva","cpfCnpj":null,"externalReference":1,"notificationDisabled":true}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: ''
+    headers:
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 27 Dec 2024 18:01:16 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - AWSALB=vQo368i2XBeB+FHxNM54uU0zmJ9qk4N0ic6srA6kSUCi05/k1DU6aNvSGkhsuucNbLYQqM4owYmbd44ENBXPWNb51greM2SmmXethFjdtfkLp/17hSZss+2cnGD3;
+        Expires=Fri, 03 Jan 2025 18:01:16 GMT; Path=/
+      - AWSALBCORS=vQo368i2XBeB+FHxNM54uU0zmJ9qk4N0ic6srA6kSUCi05/k1DU6aNvSGkhsuucNbLYQqM4owYmbd44ENBXPWNb51greM2SmmXethFjdtfkLp/17hSZss+2cnGD3;
+        Expires=Fri, 03 Jan 2025 18:01:16 GMT; Path=/; SameSite=None; Secure
+      - AWSALBTG=vzkm8Of4kvMyDLI2MCUHpyh6B+MmMd2NiuZv+G1v1A5gI6fN60fTw18e6g48FTFqHktLx4BmT3KWwgZHOs+zqQ+jRp8hnbXIv358iMmQVb1UM1JeTD9yriTpllU21iGN/nOM9ecgU94vA52AlZ2lCnH1GVXsHMBN/vkCVelDGAuw;
+        Expires=Fri, 03 Jan 2025 18:01:16 GMT; Path=/
+      - AWSALBTGCORS=vzkm8Of4kvMyDLI2MCUHpyh6B+MmMd2NiuZv+G1v1A5gI6fN60fTw18e6g48FTFqHktLx4BmT3KWwgZHOs+zqQ+jRp8hnbXIv358iMmQVb1UM1JeTD9yriTpllU21iGN/nOM9ecgU94vA52AlZ2lCnH1GVXsHMBN/vkCVelDGAuw;
+        Expires=Fri, 03 Jan 2025 18:01:16 GMT; Path=/; SameSite=None; Secure
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 f2efda1c6a986496720754c7fee772de.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - GRU1-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - a3l1fSH7jnr-i0ODIKfza42OMxMsN7tOZGVWzG10PtFOo7GB8ox6kA==
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 27 Dec 2024 18:01:16 GMT
+recorded_with: VCR 6.3.1
