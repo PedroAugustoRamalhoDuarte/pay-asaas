@@ -1,0 +1,124 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.asaas.com/api/v3/customers
+    body:
+      encoding: UTF-8
+      string: '{"email":"test@test.com","name":"Pedro Silva","cpfCnpj":"20218405065","externalReference":1,"notificationDisabled":true}'
+    headers:
+      Access-Token:
+      - "<ASAAS_API_KEY>"
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 27 Dec 2024 23:00:09 GMT
+      Set-Cookie:
+      - AWSALB=FnPv32iA8pkPhoXAaBRFzOhHdSTpsqthQQ0t9kdHh8H8QavS1KbY8Ykq5N2srBKK+NE4bqb4VUtcu793K+jXOaQ9w67g54csVRZn+QKb+5tBck2rPFEaZco/jrkG;
+        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/
+      - AWSALBCORS=FnPv32iA8pkPhoXAaBRFzOhHdSTpsqthQQ0t9kdHh8H8QavS1KbY8Ykq5N2srBKK+NE4bqb4VUtcu793K+jXOaQ9w67g54csVRZn+QKb+5tBck2rPFEaZco/jrkG;
+        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/; SameSite=None; Secure
+      - AWSALBTG=EBj9/a3IETBidf46OlhqxKwnkQsXmKm/ns3nSPlzYKgtppppnSdeFcwxUOzbFvBsv+K/SNoh2mvVTQK44Mdjj3TByMaDttssmO9ae+EHp41PIp/sT6dbrHChub/WzCB6n4N2xjK7ICAqDwJfJ36FPt08Ip/quI/zFYrDW36bOl5y;
+        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/
+      - AWSALBTGCORS=EBj9/a3IETBidf46OlhqxKwnkQsXmKm/ns3nSPlzYKgtppppnSdeFcwxUOzbFvBsv+K/SNoh2mvVTQK44Mdjj3TByMaDttssmO9ae+EHp41PIp/sT6dbrHChub/WzCB6n4N2xjK7ICAqDwJfJ36FPt08Ip/quI/zFYrDW36bOl5y;
+        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/; SameSite=None; Secure
+      - JSESSIONID=B0347FFA030E8863B169BD54B48CA55E7FE6ACAA36DDBD44C460F2FEDB7B3C77C8AADA521475BFB93094C12F964496939BCF09766EB27DEA8056F430F2D6BD86.n1;
+        Path=/; Secure; HttpOnly
+      Server:
+      - nginx
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 68be678d2e87631ff97bdf13322976a0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - GRU1-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - DEQ9E0brQNAlKIpLNZwY3F3KOXgaXXGaXnbIMXMuLXh35wN7dtJR4g==
+    body:
+      encoding: UTF-8
+      string: '{"object":"customer","id":"cus_000006418651","dateCreated":"2024-12-27","name":"Pedro
+        Silva","email":"test@test.com","company":null,"phone":null,"mobilePhone":null,"address":null,"addressNumber":null,"complement":null,"province":null,"postalCode":null,"cpfCnpj":"20218405065","personType":"FISICA","deleted":false,"additionalEmails":null,"externalReference":"1","notificationDisabled":true,"observations":null,"municipalInscription":null,"stateInscription":null,"canDelete":true,"cannotBeDeletedReason":null,"canEdit":true,"cannotEditReason":null,"city":null,"cityName":null,"state":null,"country":"Brasil"}'
+  recorded_at: Fri, 27 Dec 2024 23:00:09 GMT
+- request:
+    method: post
+    uri: https://sandbox.asaas.com/api/v3/payments
+    body:
+      encoding: UTF-8
+      string: '{"billingType":"PIX","dueDate":"2024-12-27","value":10.0,"customer":"cus_000006418651"}'
+    headers:
+      Access-Token:
+      - "<ASAAS_API_KEY>"
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 27 Dec 2024 23:00:10 GMT
+      Ratelimit-Remaining:
+      - '99'
+      Ratelimit-Reset:
+      - '9'
+      Set-Cookie:
+      - AWSALB=DqW9faM66KwI4GeUa3JPa7LHCFZOGaNTk/aQUj/ZzaISH/E6WWm4w+TsoAKlKGnOfA1lJeJERlsfBoojhAjwO2+V1f5VPtJmrXjvuRT4irTdoVuHDalOX3StDAGb;
+        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/
+      - AWSALBCORS=DqW9faM66KwI4GeUa3JPa7LHCFZOGaNTk/aQUj/ZzaISH/E6WWm4w+TsoAKlKGnOfA1lJeJERlsfBoojhAjwO2+V1f5VPtJmrXjvuRT4irTdoVuHDalOX3StDAGb;
+        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/; SameSite=None; Secure
+      - AWSALBTG=wJ1EaCaVRWKMFeIjFKBiJtX3+iM21lWL/odpHopWjYmhXiZxAy5+qEQIbUoqIR4JaPSybKO6TIu1Ck4R6v0e0PiE+QWyCb88lczmansUxmevKUW7U52cloNXMbU4NhN5FUaJMh8xS3Xecf9YvHbaXmgB+JbIBDfxBgOKCIGGf11Y;
+        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/
+      - AWSALBTGCORS=wJ1EaCaVRWKMFeIjFKBiJtX3+iM21lWL/odpHopWjYmhXiZxAy5+qEQIbUoqIR4JaPSybKO6TIu1Ck4R6v0e0PiE+QWyCb88lczmansUxmevKUW7U52cloNXMbU4NhN5FUaJMh8xS3Xecf9YvHbaXmgB+JbIBDfxBgOKCIGGf11Y;
+        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/; SameSite=None; Secure
+      - JSESSIONID=2C19BF710181618D636FC2C6855D76083EEBBC3AD5AC1B21E38DEF188864D1B3F4467EE35B8C8BDB650C829CBDC092847CAB48211AB32DAA603557172C47768F.n1;
+        Path=/; Secure; HttpOnly
+      Server:
+      - nginx
+      Ratelimit-Limit:
+      - '100'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 94515a696fcaa3487248920ae7147c34.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - GRU1-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - pr1XNHh4-mZ0GRCzSnyjdk3_1zE7qMUzPLzqXIqX8hauZFT7jBl-8w==
+    body:
+      encoding: UTF-8
+      string: '{"object":"payment","id":"pay_9ly704ed0z33293g","dateCreated":"2024-12-27","customer":"cus_000006418651","paymentLink":null,"value":10,"netValue":8.01,"originalValue":null,"interestValue":null,"description":null,"billingType":"PIX","pixTransaction":null,"status":"PENDING","dueDate":"2024-12-27","originalDueDate":"2024-12-27","paymentDate":null,"clientPaymentDate":null,"installmentNumber":null,"invoiceUrl":"https://sandbox.asaas.com/i/9ly704ed0z33293g","invoiceNumber":"07290305","externalReference":null,"deleted":false,"anticipated":false,"anticipable":false,"creditDate":null,"estimatedCreditDate":null,"transactionReceiptUrl":null,"nossoNumero":null,"bankSlipUrl":null,"lastInvoiceViewedDate":null,"lastBankSlipViewedDate":null,"discount":{"value":0.00,"limitDate":null,"dueDateLimitDays":0,"type":"FIXED"},"fine":{"value":0.00,"type":"FIXED"},"interest":{"value":0.00,"type":"PERCENTAGE"},"postalService":false,"custody":null,"refunds":null}'
+  recorded_at: Fri, 27 Dec 2024 23:00:10 GMT
+recorded_with: VCR 6.3.1

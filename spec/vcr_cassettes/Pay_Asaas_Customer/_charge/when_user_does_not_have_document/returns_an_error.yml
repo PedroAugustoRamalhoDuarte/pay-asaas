@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.asaas.com/api/v3/customers
+    body:
+      encoding: UTF-8
+      string: '{"email":"test@test.com","name":"Pedro Silva","cpfCnpj":null,"externalReference":1,"notificationDisabled":true}'
+    headers:
+      Access-Token:
+      - "<ASAAS_API_KEY>"
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 27 Dec 2024 23:00:10 GMT
+      Set-Cookie:
+      - AWSALB=d34yfSA0OV+4ZT2/8He4E12f++1169mMuZhRJ28gMvjwM0u4nM91uDaUydR+Iej2DIjNWIuvnzjgB+QK02nQfo72xbVsf+UIDYlZrz3B5RGan8GI1SrVl1FSopm3;
+        Expires=Fri, 03 Jan 2025 23:00:10 GMT; Path=/
+      - AWSALBCORS=d34yfSA0OV+4ZT2/8He4E12f++1169mMuZhRJ28gMvjwM0u4nM91uDaUydR+Iej2DIjNWIuvnzjgB+QK02nQfo72xbVsf+UIDYlZrz3B5RGan8GI1SrVl1FSopm3;
+        Expires=Fri, 03 Jan 2025 23:00:10 GMT; Path=/; SameSite=None; Secure
+      - AWSALBTG=p5gTlUZq2Xj1CwPLHtBMopuygdpJxW9HjuPx2DlFLgaU8gC+PID5RaoGNSakeCApDoF77FwnGyR7/MWOhe1Uu6gMf2UVtqYi7AjboEqn0PujHyDKRcOaCa3bIYcttlmBJYJHv8qoiFq6t9C463FBeriTYd8TGgjyJrQmVOMA90UT;
+        Expires=Fri, 03 Jan 2025 23:00:10 GMT; Path=/
+      - AWSALBTGCORS=p5gTlUZq2Xj1CwPLHtBMopuygdpJxW9HjuPx2DlFLgaU8gC+PID5RaoGNSakeCApDoF77FwnGyR7/MWOhe1Uu6gMf2UVtqYi7AjboEqn0PujHyDKRcOaCa3bIYcttlmBJYJHv8qoiFq6t9C463FBeriTYd8TGgjyJrQmVOMA90UT;
+        Expires=Fri, 03 Jan 2025 23:00:10 GMT; Path=/; SameSite=None; Secure
+      - JSESSIONID=4993EDC7C1C9D629F885212E4BD943C50BBBFF13210D56F920F3882CB70E83F4F1B4BC5A624A02DD0CF7D54DA3A3E9F9E9D317F91AB4EF79FFC6B7ABDB165AB8.n1;
+        Path=/; Secure; HttpOnly
+      Server:
+      - nginx
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 fa17f5597171aff55fdf9c05da14dd6a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - GRU1-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - KXDBGE0ehuSL8ui9PrIYI0AmEV4rF9ooUSm8gAdQQl7R8zu-DOEZGw==
+    body:
+      encoding: UTF-8
+      string: '{"object":"customer","id":"cus_000006418652","dateCreated":"2024-12-27","name":"Pedro
+        Silva","email":"test@test.com","company":null,"phone":null,"mobilePhone":null,"address":null,"addressNumber":null,"complement":null,"province":null,"postalCode":null,"cpfCnpj":null,"personType":null,"deleted":false,"additionalEmails":null,"externalReference":"1","notificationDisabled":true,"observations":null,"municipalInscription":null,"stateInscription":null,"canDelete":true,"cannotBeDeletedReason":null,"canEdit":true,"cannotEditReason":null,"city":null,"cityName":null,"state":null,"country":"Brasil"}'
+  recorded_at: Fri, 27 Dec 2024 23:00:10 GMT
+- request:
+    method: post
+    uri: https://sandbox.asaas.com/api/v3/payments
+    body:
+      encoding: UTF-8
+      string: '{"billingType":"PIX","dueDate":"2024-12-27","value":10.0,"customer":"cus_000006418652"}'
+    headers:
+      Access-Token:
+      - "<ASAAS_API_KEY>"
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 27 Dec 2024 23:00:11 GMT
+      Ratelimit-Remaining:
+      - '98'
+      Ratelimit-Reset:
+      - '8'
+      Set-Cookie:
+      - AWSALB=nnjx0YnH7nmCQR9bbR3P2/5U2SZT6R2Ssub52DyJcHMqzHxtHdbniCoi6/iuRSeRdTQbxKTXKs7Kq+/0JkpHH+hajx//GknKJToLZ8Q9IfHYhEcrBiv3nIu6FEYd;
+        Expires=Fri, 03 Jan 2025 23:00:11 GMT; Path=/
+      - AWSALBCORS=nnjx0YnH7nmCQR9bbR3P2/5U2SZT6R2Ssub52DyJcHMqzHxtHdbniCoi6/iuRSeRdTQbxKTXKs7Kq+/0JkpHH+hajx//GknKJToLZ8Q9IfHYhEcrBiv3nIu6FEYd;
+        Expires=Fri, 03 Jan 2025 23:00:11 GMT; Path=/; SameSite=None; Secure
+      - AWSALBTG=opNF7lJhCMmyJF8m8hHeQuk0WO5TLMQ4xM3JuQOT73pytCAJEYzID5z5+7qucVrD0orDvdT8yBaLFlBPf5NH39YTI/TwAdINWBgseeWbuWCz0v5MibLwdyP+xGqIcu+vFSxQwKp4wDbT9GhWooHJHqtlE+ftZamfW/kzHbGop0tm;
+        Expires=Fri, 03 Jan 2025 23:00:11 GMT; Path=/
+      - AWSALBTGCORS=opNF7lJhCMmyJF8m8hHeQuk0WO5TLMQ4xM3JuQOT73pytCAJEYzID5z5+7qucVrD0orDvdT8yBaLFlBPf5NH39YTI/TwAdINWBgseeWbuWCz0v5MibLwdyP+xGqIcu+vFSxQwKp4wDbT9GhWooHJHqtlE+ftZamfW/kzHbGop0tm;
+        Expires=Fri, 03 Jan 2025 23:00:11 GMT; Path=/; SameSite=None; Secure
+      - JSESSIONID=8C6F7B8E6A9CFFF5FE32956C1DDAA73D4FBC838382BF668ED8FEFEDACEDAF614BAFC9A4D8C64B99D4C6B41D4D19CDD3BC9A333233EB97EBF5E0AF5643EE58BA2.n1;
+        Path=/; Secure; HttpOnly
+      Server:
+      - nginx
+      Ratelimit-Limit:
+      - '100'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 e15939e7a5d8908607a5a8daf797e030.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - GRU1-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - xhyHNdMY8JzlbertWT0hnzLEcKWAx4-SFtCoWD1BSq9HwCnSNxqgqA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOlt7ImNvZGUiOiJpbnZhbGlkX2N1c3RvbWVyLmNwZkNucGoiLCJkZXNjcmlwdGlvbiI6IlBhcmEgY3JpYXIgZXN0YSBjb2JyYW7Dp2Egw6kgbmVjZXNzw6FyaW8gcHJlZW5jaGVyIG8gQ1BGIG91IENOUEogZG8gY2xpZW50ZS4ifV19
+  recorded_at: Fri, 27 Dec 2024 23:00:11 GMT
+recorded_with: VCR 6.3.1

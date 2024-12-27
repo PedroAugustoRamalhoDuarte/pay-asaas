@@ -1,4 +1,5 @@
 require "pay/asaas/api/customer"
+require "pay/asaas/api/payment"
 
 module Pay
   module Asaas
@@ -20,7 +21,7 @@ module Pay
           update!(processor_id: customer_response["id"]) # TODO: is not updating
           customer_response
         end
-      rescue ApiClient::ApiError, ActiveRecordError => e
+      rescue ApiClient::ApiError => e
         Rails.logger.error "[Pay] Error creating Asaas customer: #{e.message}"
         raise Pay::Asaas::Error, e.message
       end
@@ -30,13 +31,17 @@ module Pay
         Pay::Asaas::Api::Customer.update!(id: processor_id, params: api_record_attributes.merge(attributes))
       end
 
-      # Charges an amount to the customer's default payment method
+      # Charges only for pix right now
       def charge(amount, options = {})
-        transaction = ApiClient.create_pix_charge!(
-          processor_id: processor_id,
-          amount: amount,
-          other_params: options.merge(dueDate: Time.zone.today.to_s),
-        )
+        # Setup the customer's default payment method
+        params = {
+          billingType: "PIX",
+          dueDate: Time.zone.today.to_s,
+          value: amount / 100.0, # Asaas expects a float
+        }.merge(options)
+          .merge(customer: processor_id || api_record["id"]) # Merge last to not let override customer
+
+        transaction = Pay::Asaas::Api::Payment.create(params: params)
 
         attrs = {
           amount: amount,
@@ -45,8 +50,9 @@ module Pay
         charge = charges.find_or_initialize_by(processor_id: transaction["id"])
         charge.update(attrs)
         charge
-      rescue StandardError => e
+      rescue ApiClient::ApiError => e
         Rails.logger.error "[Pay] Error creating Asaas charge: #{e.message}"
+        raise Pay::Asaas::Error, e.message
       end
     end
   end
