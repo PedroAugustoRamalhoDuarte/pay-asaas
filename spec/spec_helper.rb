@@ -1,4 +1,6 @@
+require "dotenv/load"
 require "pay/asaas"
+require "database_cleaner-active_record"
 
 # Add this to spec/spec_helper.rb
 ENV["RAILS_ENV"] ||= "test"
@@ -21,8 +23,21 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
+  # Rails logger configuration
   config.before(:suite) do
     Rails.logger = Logger.new($stdout)
     Rails.logger.level = Logger::ERROR
+  end
+
+  # Database cleaner configuration
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
   end
 end

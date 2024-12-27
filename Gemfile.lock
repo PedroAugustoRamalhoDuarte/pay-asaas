@@ -94,8 +94,13 @@ GEM
       rexml
     crass (1.0.6)
     csv (3.3.1)
+    database_cleaner-active_record (2.2.0)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     date (3.4.1)
     diff-lcs (1.5.1)
+    dotenv (3.1.7)
     drb (2.2.1)
     erubi (1.13.1)
     globalid (1.2.1)
@@ -308,6 +313,8 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  database_cleaner-active_record
+  dotenv
   pay
   pay-asaas!
   rake (~> 13.0)

@@ -9,6 +9,8 @@ gem "rspec", "~> 3.0"
 gem "vcr"
 gem "webmock"
 
+gem "dotenv"
+
 gem "pay"
 
 gem "switchcop", require: false
