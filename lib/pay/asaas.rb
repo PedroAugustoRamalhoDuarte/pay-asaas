@@ -11,8 +11,30 @@ module Pay
     class Error < Pay::Error
     end
 
-    # Webhooks
+    # Setup configuration
+
+    # If users imports this gem its enable by default
+    def self.enabled?
+      true
+    end
+
+    def self.setup
+      # Configure api client key in this setup
+      Pay::Asaas::ApiClient.configure do |config|
+        config.api_key = Pay::Asaas.api_key
+        config.base_url = Pay::Asaas.api_url
+      end
+    end
+
     extend Pay::Env
+
+    def self.api_key
+      find_value_by_name(:asaas, :api_key)
+    end
+
+    def self.api_url
+      find_value_by_name(:asaas, :api_url) || "https://sandbox.asaas.com/api/v3"
+    end
 
     def self.webhook_access_key
       find_value_by_name(:asaas, :webhook_access_key)
