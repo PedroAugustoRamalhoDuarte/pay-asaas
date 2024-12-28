@@ -1,4 +1,4 @@
-# pay-asaas 
+# pay-asaas
 
 Asaas payment processor for Pay gem (Payments engine for Ruby on Rails);
 
@@ -20,7 +20,59 @@ Install the gem and add to the application's Gemfile by executing:
 bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG;
 ```
 
-## Usage
+> Install pay gem if you haven't already: https://github.com/pay-rails/pay/blob/main/docs/1_installation.md
+
+## Configuration
+
+### Rails Credentials
+
+`rails credentials:edit --environment=development`
+
+```yml
+asaas:
+  api_key: xxxx
+  api_url: https://sandbox.asaas.com/api/v3 # or https://www.asaas.com/api/v3
+  webhook_access_key: xxxx
+```
+
+### Environment Variables
+
+Pay will also check environment variables for API keys:
+
+- `ASAAS_API_KEY`
+- `ASAAS_API_URL`
+- `ASAAS_WEBHOOK_ACCESS_KEY`
+
+> Se other configuration options at: https://github.com/pay-rails/pay/blob/main/docs/2_configuration.md
+
+## Customer
+
+**IMPORTANT**: For this add the document column to users table.
+
+The customer works the same as the other processors, but with the document additional field.
+
+The document is not required to create the customer but is required to process payments. The document can be cpf ou cnpj
+without mask.
+
+## Charge
+
+This first version of the gem will only support PIX payments.
+
+```ruby
+@user.payment_processor.charge(15_00)
+```
+
+## Webhooks
+
+The gem will provide a controller to handle the webhooks.
+
+To configure webhooks on your payment processor, use the following URLs while replacing example.org with your own
+domain:
+
+- Asaas: https://example.org/pay/webhooks/asaas
+
+> For now we listen to the events that are important for pix transactions. For more configuration options
+> see: https://github.com/pay-rails/pay/blob/main/docs/7_webhooks.md
 
 ## Development
 
