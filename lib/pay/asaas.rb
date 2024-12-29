@@ -9,6 +9,7 @@ module Pay
   module Asaas
     autoload :Customer, "pay/asaas/customer"
     autoload :Charge, "pay/asaas/charge"
+    autoload :PaymentMethod, "pay/asaas/payment_method"
 
     class Error < Pay::Error
     end

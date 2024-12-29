@@ -4,6 +4,7 @@ module Pay
   module Asaas
     class Charge < Pay::Charge
       store_accessor :data, :status
+      store_accessor :data, :qr_code
 
       def self.sync(charge_id, object: nil, try: 0, retries: 1)
         object ||= Pay::Asaas::Api::Payment.find(id: charge_id)

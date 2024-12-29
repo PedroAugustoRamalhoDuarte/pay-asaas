@@ -9,7 +9,6 @@ module Pay
       has_one :default_payment_method, -> { where(default: true) }, class_name: "Pay::Asaas::PaymentMethod"
 
       def api_record_attributes
-        # TODO: where to format document
         { email: email, name: customer_name, cpfCnpj: owner.document, externalReference: owner.id }
       end
 
@@ -18,7 +17,7 @@ module Pay
           Pay::Asaas::Api::Customer.find(id: processor_id)
         else
           customer_response = Pay::Asaas::Api::Customer.create(params: api_record_attributes)
-          update!(processor_id: customer_response["id"]) # TODO: is not updating
+          update!(processor_id: customer_response["id"])
           customer_response
         end
       rescue ApiClient::ApiError => e
@@ -45,6 +44,7 @@ module Pay
 
         attrs = {
           amount: amount,
+          payment_method_type: "pix",
         }
 
         charge = charges.find_or_initialize_by(processor_id: transaction["id"])

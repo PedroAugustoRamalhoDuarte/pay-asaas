@@ -8,9 +8,15 @@ Asaas payment processor for Pay gem (Payments engine for Ruby on Rails);
 
 The goal for the first implementation is to support the following features:
 
-- [ ] Customer creation
-- [ ] Make a payment with PIX
-- [ ] Support basic webhooks needed for the payment process
+- [x] Customer creation
+- [x] Make a payment with PIX
+- [x] Support basic webhooks needed for the payment process
+
+Following features will be implemented in the future and I will be happy to receive contributions:
+
+- [ ] Pix QRCode sync
+- [ ] Credit Cards
+- [ ] Subscriptions
 
 ## Installation
 
