@@ -1,3 +1,5 @@
+$LOAD_PATH.push File.expand_path("../lib", __FILE__)
+
 require_relative "lib/pay/asaas/version"
 
 Gem::Specification.new do |spec|

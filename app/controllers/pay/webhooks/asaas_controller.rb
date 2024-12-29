@@ -20,14 +20,15 @@ module Pay
       private
 
       def queue_event(event)
-        return unless Pay::Webhooks.delegator.listening?("asaas.#{event[:event]&.downcase}")
+        event_type = event["event"]&.downcase
+        return unless Pay::Webhooks.delegator.listening?("asaas.#{event_type}")
 
-        record = Pay::Webhook.create!(processor: :asaas, event_type: event.type, event: event)
+        record = Pay::Webhook.create!(processor: :asaas, event_type: event_type, event: event)
         Pay::Webhooks::ProcessJob.perform_later(record)
       end
 
       def valid_signature?(signature)
-        signature == Pay::Assas.webhook_access_token
+        signature == Pay::Asaas.webhook_access_key
       end
 
       def log_error(e)

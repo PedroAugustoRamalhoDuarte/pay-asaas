@@ -1,5 +1,7 @@
 require_relative "asaas/version"
 require_relative "asaas/inflections"
+require "pay/asaas/engine"
+require "pay/asaas/client"
 require "pay/errors"
 require "pay/env"
 
@@ -9,6 +11,10 @@ module Pay
     autoload :Charge, "pay/asaas/charge"
 
     class Error < Pay::Error
+    end
+
+    module Webhooks
+      autoload :PaymentSync, "pay/asaas/webhooks/payment_sync"
     end
 
     # Setup configuration
