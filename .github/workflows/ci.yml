@@ -1,6 +1,7 @@
 name: CI
 env:
   RUBY_VERSION: 3.4.1
+  ASAAS_API_KEY: "Secret"
 
 on:
   pull_request:
