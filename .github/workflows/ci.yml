@@ -37,6 +37,10 @@ jobs:
       - name: Install gems
         run: bundle install
 
+      - name: Setup rails dependencies
+        working-directory: ./spec/dummy
+        run: bundle install
+
       - name: Setup database
         working-directory: ./spec/dummy
         run: bundle exec rails db:setup
