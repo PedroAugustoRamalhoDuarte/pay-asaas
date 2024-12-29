@@ -5,9 +5,12 @@ gemspec
 
 gem "rake", "~> 13.0"
 
+# Testing
 gem "rspec", "~> 3.0"
+gem "rspec-rails"
 gem "vcr"
 gem "webmock"
+gem "database_cleaner-active_record"
 
 gem "dotenv"
 
