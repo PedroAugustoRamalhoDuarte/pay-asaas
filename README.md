@@ -23,7 +23,7 @@ Following features will be implemented in the future and I will be happy to rece
 Install the gem and add to the application's Gemfile by executing:
 
 ```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG;
+bundle add pay-asaas;
 ```
 
 > Install pay gem if you haven't already: https://github.com/pay-rails/pay/blob/main/docs/1_installation.md
