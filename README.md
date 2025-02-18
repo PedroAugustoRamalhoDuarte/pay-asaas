@@ -2,6 +2,7 @@
 
 Asaas payment processor for Pay gem (Payments engine for Ruby on Rails);
 
+> [!WARNING]
 > This gem is a work in progress and is not ready for production use.
 
 > This gem is not affiliated with Asaas.
