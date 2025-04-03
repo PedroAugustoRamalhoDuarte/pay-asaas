@@ -9,7 +9,21 @@ module Pay
       has_one :default_payment_method, -> { where(default: true) }, class_name: "Pay::Asaas::PaymentMethod"
 
       def api_record_attributes
-        { email: email, name: customer_name, cpfCnpj: owner.document, externalReference: owner.id }
+        document = if owner.respond_to?(:document)
+          owner.document
+        elsif owner.respond_to?(:cpf)
+          owner.cpf
+        elsif owner.respond_to?(:cnpj)
+          owner.cnpj
+        else
+          raise StandardError, "The document attribute, and it's alternatives are not implemented for #{owner.class}"
+        end
+
+        raise StandardError, "The document attribute is required" if document.nil?
+
+        document = document.gsub(/[^\d]/, "")
+
+        { email: email, name: customer_name, cpfCnpj: document, externalReference: owner.id }
       end
 
       def api_record

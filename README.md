@@ -54,12 +54,12 @@ Pay will also check environment variables for API keys:
 
 ## Customer
 
-**IMPORTANT**: For this add the document column to users table.
+**IMPORTANT**: In order to create a customer with pay-asaas, you need to provide a document (cpf or cnpj) to the user. This can be in the form of the following columns, in order of preference:
+  - `document`
+  - `cpf`
+  - `cnpj`
 
-The customer works the same as the other processors, but with the document additional field.
-
-The document is not required to create the customer but is required to process payments. The document can be cpf ou cnpj
-without mask.
+In asaas, the document is not required to create the customer but is required to process payments, as such, we choose to make the field mandatory in this gem.
 
 ## Charge
 

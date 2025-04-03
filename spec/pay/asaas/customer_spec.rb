@@ -28,7 +28,7 @@ RSpec.describe Pay::Asaas::Customer do
       end
     end
 
-    it "creates a new charge" do
+    it "creates a new charge" do # rubocop:disable RSpec/MultipleExpectations
       user.document = valid_cpf
       expect do
         user.payment_processor.charge(10_00)
