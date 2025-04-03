@@ -28,12 +28,19 @@ RSpec.describe "Pay::Webhooks::AsaasController", type: :request do
     end
 
     context "when the event is valid" do
+      let(:order) { Order.create!(name: "test") }
+
       let(:pay_customer) do
         Pay::Asaas::Customer.create!(processor: :asaas, processor_id: params["payment"]["customer"], owner: user)
       end
 
       it "returns success and created Pay::Webhook" do
-        Pay::Asaas::Charge.create!(processor_id: params["payment"]["id"], customer: pay_customer, amount: 10)
+        Pay::Asaas::Charge.create!(
+          processor_id: params["payment"]["id"],
+          customer: pay_customer,
+          amount: 10,
+          order_id: order.id,
+        )
         expect { post "/pay/webhooks/asaas", params: params }.to change(Pay::Webhook, :count).by(1)
         expect(response).to have_http_status(:success)
       end

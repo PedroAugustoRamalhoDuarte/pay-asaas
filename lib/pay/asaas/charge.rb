@@ -4,7 +4,8 @@ module Pay
   module Asaas
     class Charge < Pay::Charge
       store_accessor :data, :status
-      store_accessor :data, :qr_code
+      store_accessor :data, :pix_code
+      after_create :sync_pix_qr_code
 
       def self.sync(charge_id, object: nil, try: 0, retries: 1)
         object ||= Pay::Asaas::Api::Payment.find(id: charge_id)
@@ -56,6 +57,16 @@ module Pay
 
       def refund!(amount_to_refund)
         raise NotImplementedError, "Refunding charges is not supported yet by the Asaas fake processor"
+      end
+
+      def sync_pix_qr_code
+        return unless payment_method_type == "pix"
+
+        response = Pay::Asaas::Api::Payment.fetch_qr_code(processor_id)
+
+        update!(
+          pix_code: response["payload"],
+        )
       end
     end
   end

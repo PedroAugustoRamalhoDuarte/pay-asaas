@@ -2,9 +2,9 @@ require "dotenv/load"
 require "pay/asaas"
 require "database_cleaner-active_record"
 
-# Add this to spec/spec_helper.rb
 ENV["RAILS_ENV"] ||= "test"
-require File.expand_path("../dummy/config/environment", __FILE__)
+
+require_relative "../spec/dummy/config/environment"
 
 ENV["RAILS_ROOT"] ||= "#{File.dirname(__FILE__)}../../../spec/dummy"
 

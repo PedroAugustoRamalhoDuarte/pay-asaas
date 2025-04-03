@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pay-asaas (0.1.0.pre.alpha)
+    pay-asaas (0.1.0)
       activesupport
       httparty
       pay (~> 8)

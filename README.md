@@ -12,10 +12,9 @@ The goal for the first implementation is to support the following features:
 - [x] Customer creation
 - [x] Make a payment with PIX
 - [x] Support basic webhooks needed for the payment process
+- [x] Pix QRCode sync
 
 Following features will be implemented in the future and I will be happy to receive contributions:
-
-- [ ] Pix QRCode sync
 - [ ] Credit Cards
 - [ ] Subscriptions
 
@@ -54,12 +53,12 @@ Pay will also check environment variables for API keys:
 
 ## Customer
 
-**IMPORTANT**: For this add the document column to users table.
+**IMPORTANT**: In order to create a customer with pay-asaas, you need to provide a document (cpf or cnpj) to the user. This can be in the form of the following columns, in order of preference:
+  - `document`
+  - `cpf`
+  - `cnpj`
 
-The customer works the same as the other processors, but with the document additional field.
-
-The document is not required to create the customer but is required to process payments. The document can be cpf ou cnpj
-without mask.
+In asaas, the document is not required to create the customer but is required to process payments, as such, we choose to make the field mandatory in this gem.
 
 ## Charge
 
@@ -67,6 +66,8 @@ This first version of the gem will only support PIX payments.
 
 ```ruby
 @user.payment_processor.charge(15_00)
+
+@user.payment_processor.charge(15_00, { attrs: { order_id: @order.id } })
 ```
 
 ## Webhooks
@@ -95,6 +96,10 @@ push git commits and the created tag, and push the `.gem` file to [rubygems.org]
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/pay-asaas. This project is intended
 to be a safe, welcoming space for collaboration, and contributors are expected to adhere to
 the [code of conduct](https://github.com/[USERNAME]/pay-asaas/blob/master/CODE_OF_CONDUCT.md).
+
+### Running tests
+
+In order to run the test, first add a .env with fake credentials at the root of the project, and create a database in the `spec/dummy` folder.
 
 ## License
 

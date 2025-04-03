@@ -28,7 +28,6 @@ module Pay::Asaas
 
       def configure
         yield(configuration)
-        configuration.validate!
       end
 
       def headers
@@ -44,6 +43,7 @@ module Pay::Asaas
       end
 
       def request(method, path, options = {})
+        configuration.validate!
         response = HTTParty.send(
           method,
           "#{configuration.base_url}/#{path}",
