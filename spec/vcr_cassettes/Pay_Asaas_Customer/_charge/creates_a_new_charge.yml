@@ -29,41 +29,41 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 27 Dec 2024 23:00:09 GMT
+      - Thu, 03 Apr 2025 18:23:29 GMT
       Set-Cookie:
-      - AWSALB=FnPv32iA8pkPhoXAaBRFzOhHdSTpsqthQQ0t9kdHh8H8QavS1KbY8Ykq5N2srBKK+NE4bqb4VUtcu793K+jXOaQ9w67g54csVRZn+QKb+5tBck2rPFEaZco/jrkG;
-        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/
-      - AWSALBCORS=FnPv32iA8pkPhoXAaBRFzOhHdSTpsqthQQ0t9kdHh8H8QavS1KbY8Ykq5N2srBKK+NE4bqb4VUtcu793K+jXOaQ9w67g54csVRZn+QKb+5tBck2rPFEaZco/jrkG;
-        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/; SameSite=None; Secure
-      - AWSALBTG=EBj9/a3IETBidf46OlhqxKwnkQsXmKm/ns3nSPlzYKgtppppnSdeFcwxUOzbFvBsv+K/SNoh2mvVTQK44Mdjj3TByMaDttssmO9ae+EHp41PIp/sT6dbrHChub/WzCB6n4N2xjK7ICAqDwJfJ36FPt08Ip/quI/zFYrDW36bOl5y;
-        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/
-      - AWSALBTGCORS=EBj9/a3IETBidf46OlhqxKwnkQsXmKm/ns3nSPlzYKgtppppnSdeFcwxUOzbFvBsv+K/SNoh2mvVTQK44Mdjj3TByMaDttssmO9ae+EHp41PIp/sT6dbrHChub/WzCB6n4N2xjK7ICAqDwJfJ36FPt08Ip/quI/zFYrDW36bOl5y;
-        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/; SameSite=None; Secure
-      - JSESSIONID=B0347FFA030E8863B169BD54B48CA55E7FE6ACAA36DDBD44C460F2FEDB7B3C77C8AADA521475BFB93094C12F964496939BCF09766EB27DEA8056F430F2D6BD86.n1;
+      - AWSALB=t8L449Q9gZMLTc9Qg+YTTk/c2vN5U+nGPMF5EAFH4vnxOp4rzoobNM3kjT4Cy8BdMiZh5z7sqd9/3n+fkUGIHhrlqzEFh+6TZuVmLZHWE6LY/FdcnRCZ9LCXCkPY;
+        Expires=Thu, 10 Apr 2025 18:23:29 GMT; Path=/
+      - AWSALBCORS=t8L449Q9gZMLTc9Qg+YTTk/c2vN5U+nGPMF5EAFH4vnxOp4rzoobNM3kjT4Cy8BdMiZh5z7sqd9/3n+fkUGIHhrlqzEFh+6TZuVmLZHWE6LY/FdcnRCZ9LCXCkPY;
+        Expires=Thu, 10 Apr 2025 18:23:29 GMT; Path=/; SameSite=None; Secure
+      - AWSALBTG=MEHpt/s8OiFcurAg9UNSsKwaBNnPLs2pfIQdolIiG1iKc/rQQLiv0yI+/zy+UMM81FU8NQDN40YiQCzQTnSaY2TN75HZZVxBtYzJ9b0BZxRwTzMcCvhpEQkcXZ/g7/KrRVhe7E9KLIuWhfrqcnRxKSlGE0MUNQ+fSzbIrpBtRb6M;
+        Expires=Thu, 10 Apr 2025 18:23:29 GMT; Path=/
+      - AWSALBTGCORS=MEHpt/s8OiFcurAg9UNSsKwaBNnPLs2pfIQdolIiG1iKc/rQQLiv0yI+/zy+UMM81FU8NQDN40YiQCzQTnSaY2TN75HZZVxBtYzJ9b0BZxRwTzMcCvhpEQkcXZ/g7/KrRVhe7E9KLIuWhfrqcnRxKSlGE0MUNQ+fSzbIrpBtRb6M;
+        Expires=Thu, 10 Apr 2025 18:23:29 GMT; Path=/; SameSite=None; Secure
+      - JSESSIONID=BA65BA0E4E3B8CCDE987A426A0CE171CBC57F4675A0027A55A9274A1E0E69421C922CE66870F63302D07C0D5628C7771889E3D7384CF44AA29F426B3A6A23EAC.n1;
         Path=/; Secure; HttpOnly
       Server:
       - nginx
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 68be678d2e87631ff97bdf13322976a0.cloudfront.net (CloudFront)
+      - 1.1 9734ca29815e60a3ec8cc9631b6778e6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - GRU1-P1
+      - GIG51-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - DEQ9E0brQNAlKIpLNZwY3F3KOXgaXXGaXnbIMXMuLXh35wN7dtJR4g==
+      - 9sghFD8EYPxlMCJSXkRzlM8SxngYySQpDKjEVysZKMRq5ux57eHyyA==
     body:
       encoding: UTF-8
-      string: '{"object":"customer","id":"cus_000006418651","dateCreated":"2024-12-27","name":"Pedro
+      string: '{"object":"customer","id":"cus_000006614257","dateCreated":"2025-04-03","name":"Pedro
         Silva","email":"test@test.com","company":null,"phone":null,"mobilePhone":null,"address":null,"addressNumber":null,"complement":null,"province":null,"postalCode":null,"cpfCnpj":"20218405065","personType":"FISICA","deleted":false,"additionalEmails":null,"externalReference":"1","notificationDisabled":true,"observations":null,"municipalInscription":null,"stateInscription":null,"canDelete":true,"cannotBeDeletedReason":null,"canEdit":true,"cannotEditReason":null,"city":null,"cityName":null,"state":null,"country":"Brasil"}'
-  recorded_at: Fri, 27 Dec 2024 23:00:09 GMT
+  recorded_at: Thu, 03 Apr 2025 18:23:29 GMT
 - request:
     method: post
     uri: https://sandbox.asaas.com/api/v3/payments
     body:
       encoding: UTF-8
-      string: '{"billingType":"PIX","dueDate":"2024-12-27","value":10.0,"customer":"cus_000006418651"}'
+      string: '{"billingType":"PIX","dueDate":"2025-04-03","value":10.0,"customer":"cus_000006614257"}'
     headers:
       Access-Token:
       - "<ASAAS_API_KEY>"
@@ -87,21 +87,21 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 27 Dec 2024 23:00:10 GMT
+      - Thu, 03 Apr 2025 18:23:30 GMT
       Ratelimit-Remaining:
       - '99'
       Ratelimit-Reset:
       - '9'
       Set-Cookie:
-      - AWSALB=DqW9faM66KwI4GeUa3JPa7LHCFZOGaNTk/aQUj/ZzaISH/E6WWm4w+TsoAKlKGnOfA1lJeJERlsfBoojhAjwO2+V1f5VPtJmrXjvuRT4irTdoVuHDalOX3StDAGb;
-        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/
-      - AWSALBCORS=DqW9faM66KwI4GeUa3JPa7LHCFZOGaNTk/aQUj/ZzaISH/E6WWm4w+TsoAKlKGnOfA1lJeJERlsfBoojhAjwO2+V1f5VPtJmrXjvuRT4irTdoVuHDalOX3StDAGb;
-        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/; SameSite=None; Secure
-      - AWSALBTG=wJ1EaCaVRWKMFeIjFKBiJtX3+iM21lWL/odpHopWjYmhXiZxAy5+qEQIbUoqIR4JaPSybKO6TIu1Ck4R6v0e0PiE+QWyCb88lczmansUxmevKUW7U52cloNXMbU4NhN5FUaJMh8xS3Xecf9YvHbaXmgB+JbIBDfxBgOKCIGGf11Y;
-        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/
-      - AWSALBTGCORS=wJ1EaCaVRWKMFeIjFKBiJtX3+iM21lWL/odpHopWjYmhXiZxAy5+qEQIbUoqIR4JaPSybKO6TIu1Ck4R6v0e0PiE+QWyCb88lczmansUxmevKUW7U52cloNXMbU4NhN5FUaJMh8xS3Xecf9YvHbaXmgB+JbIBDfxBgOKCIGGf11Y;
-        Expires=Fri, 03 Jan 2025 23:00:09 GMT; Path=/; SameSite=None; Secure
-      - JSESSIONID=2C19BF710181618D636FC2C6855D76083EEBBC3AD5AC1B21E38DEF188864D1B3F4467EE35B8C8BDB650C829CBDC092847CAB48211AB32DAA603557172C47768F.n1;
+      - AWSALB=PhomZrxzR6GcdQUOWSG6autdeFrFDHk8eaGZ/sNnm0d8XwHgs3iS8yflj623uXZHZwLUxia9xo/fZIntd8sXGgkpRzSKhLaX8P6uIiXvFp2v/siSM0u17OBe/Nlt;
+        Expires=Thu, 10 Apr 2025 18:23:29 GMT; Path=/
+      - AWSALBCORS=PhomZrxzR6GcdQUOWSG6autdeFrFDHk8eaGZ/sNnm0d8XwHgs3iS8yflj623uXZHZwLUxia9xo/fZIntd8sXGgkpRzSKhLaX8P6uIiXvFp2v/siSM0u17OBe/Nlt;
+        Expires=Thu, 10 Apr 2025 18:23:29 GMT; Path=/; SameSite=None; Secure
+      - AWSALBTG=84EEa0p7/dN1JDTB8QqdiISQzN77/X/i6hklX/kwmh93/iOzUWMoJZikI016TuFQuXdMEgoAV27Wx87HmTNYxn6ReaheBQsT1AtrC9Cku4+xBwZg54PECfoxYS03/dCT7zBLIEul1Pi7E3g+egrzET1lHk0gyvdcE00t/RsLiIfk;
+        Expires=Thu, 10 Apr 2025 18:23:29 GMT; Path=/
+      - AWSALBTGCORS=84EEa0p7/dN1JDTB8QqdiISQzN77/X/i6hklX/kwmh93/iOzUWMoJZikI016TuFQuXdMEgoAV27Wx87HmTNYxn6ReaheBQsT1AtrC9Cku4+xBwZg54PECfoxYS03/dCT7zBLIEul1Pi7E3g+egrzET1lHk0gyvdcE00t/RsLiIfk;
+        Expires=Thu, 10 Apr 2025 18:23:29 GMT; Path=/; SameSite=None; Secure
+      - JSESSIONID=D090E96C476A77E3B3E56D73498AC8AE6B23122A87EB94314CE2024BCBF05846A831AD857F504C10852DB3B2E0BF594BDC5728111445D7299CE3FF9DC4F55AD3.n1;
         Path=/; Secure; HttpOnly
       Server:
       - nginx
@@ -110,15 +110,73 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 94515a696fcaa3487248920ae7147c34.cloudfront.net (CloudFront)
+      - 1.1 9734ca29815e60a3ec8cc9631b6778e6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - GRU1-P1
+      - GIG51-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - pr1XNHh4-mZ0GRCzSnyjdk3_1zE7qMUzPLzqXIqX8hauZFT7jBl-8w==
+      - 9vlZ2yVnjdOFgnUAe21x8urCN5V9oFPuKsKi9U0G5ERKc48Yk1iG2A==
     body:
       encoding: UTF-8
-      string: '{"object":"payment","id":"pay_9ly704ed0z33293g","dateCreated":"2024-12-27","customer":"cus_000006418651","paymentLink":null,"value":10,"netValue":8.01,"originalValue":null,"interestValue":null,"description":null,"billingType":"PIX","pixTransaction":null,"status":"PENDING","dueDate":"2024-12-27","originalDueDate":"2024-12-27","paymentDate":null,"clientPaymentDate":null,"installmentNumber":null,"invoiceUrl":"https://sandbox.asaas.com/i/9ly704ed0z33293g","invoiceNumber":"07290305","externalReference":null,"deleted":false,"anticipated":false,"anticipable":false,"creditDate":null,"estimatedCreditDate":null,"transactionReceiptUrl":null,"nossoNumero":null,"bankSlipUrl":null,"lastInvoiceViewedDate":null,"lastBankSlipViewedDate":null,"discount":{"value":0.00,"limitDate":null,"dueDateLimitDays":0,"type":"FIXED"},"fine":{"value":0.00,"type":"FIXED"},"interest":{"value":0.00,"type":"PERCENTAGE"},"postalService":false,"custody":null,"refunds":null}'
-  recorded_at: Fri, 27 Dec 2024 23:00:10 GMT
+      string: '{"object":"payment","id":"pay_a5u0ple9f059w5ll","dateCreated":"2025-04-03","customer":"cus_000006614257","paymentLink":null,"value":10,"netValue":8.01,"originalValue":null,"interestValue":null,"description":null,"billingType":"PIX","pixTransaction":null,"status":"PENDING","dueDate":"2025-04-03","originalDueDate":"2025-04-03","paymentDate":null,"clientPaymentDate":null,"installmentNumber":null,"invoiceUrl":"https://sandbox.asaas.com/i/a5u0ple9f059w5ll","invoiceNumber":"08322978","externalReference":null,"deleted":false,"anticipated":false,"anticipable":false,"creditDate":null,"estimatedCreditDate":null,"transactionReceiptUrl":null,"nossoNumero":null,"bankSlipUrl":null,"lastInvoiceViewedDate":null,"lastBankSlipViewedDate":null,"discount":{"value":0.00,"limitDate":null,"dueDateLimitDays":0,"type":"FIXED"},"fine":{"value":0.00,"type":"FIXED"},"interest":{"value":0.00,"type":"PERCENTAGE"},"postalService":false,"custody":null,"escrow":null,"refunds":null}'
+  recorded_at: Thu, 03 Apr 2025 18:23:30 GMT
+- request:
+    method: get
+    uri: https://sandbox.asaas.com/api/v3/payments/pay_a5u0ple9f059w5ll/pixQrCode
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Access-Token:
+      - "<ASAAS_API_KEY>"
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 03 Apr 2025 18:23:30 GMT
+      Set-Cookie:
+      - AWSALB=wF1v9RumabM8qZ8rbSCRADZvE4EwPnrAMEktjm/QFag6TKa+DPN0gBzSvO1wTmqYMRIwNWggN+DVJ2wA0acTCEuuWTssIb0rNoI4Ypty7zNpFIVc5JiQvSNOxfUt;
+        Expires=Thu, 10 Apr 2025 18:23:30 GMT; Path=/
+      - AWSALBCORS=wF1v9RumabM8qZ8rbSCRADZvE4EwPnrAMEktjm/QFag6TKa+DPN0gBzSvO1wTmqYMRIwNWggN+DVJ2wA0acTCEuuWTssIb0rNoI4Ypty7zNpFIVc5JiQvSNOxfUt;
+        Expires=Thu, 10 Apr 2025 18:23:30 GMT; Path=/; SameSite=None; Secure
+      - AWSALBTG=vWehqKJJbL07SSQkdwr5rx+ZDi5nfMaxpuXajkc+0ZoF5npmWoJlXoNNzMu3nOhR13oiB2ai0vWUOdjy++9U35qwesqhG8J2PgwOD9+944w5a+B6E2PO/Tub8M86mfOzZhWyFiIRCKJ14geKOqV3HGx2Ul5+jzTY5Z6igmenDMZU;
+        Expires=Thu, 10 Apr 2025 18:23:30 GMT; Path=/
+      - AWSALBTGCORS=vWehqKJJbL07SSQkdwr5rx+ZDi5nfMaxpuXajkc+0ZoF5npmWoJlXoNNzMu3nOhR13oiB2ai0vWUOdjy++9U35qwesqhG8J2PgwOD9+944w5a+B6E2PO/Tub8M86mfOzZhWyFiIRCKJ14geKOqV3HGx2Ul5+jzTY5Z6igmenDMZU;
+        Expires=Thu, 10 Apr 2025 18:23:30 GMT; Path=/; SameSite=None; Secure
+      - JSESSIONID=34363BB9F81B3BED62E64CE8FEE400EEB0BEE53256BDBD844F9498106A88615B4004494ECFA3A43AA21F25AB74AB01CD24FD2C7317ABE1900169DB24EC347AA3.n1;
+        Path=/; Secure; HttpOnly
+      Server:
+      - nginx
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e33021a982783e51e0386debf6f384de.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - GIG51-P3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - UNPkRNRpNyF0ru_-KTUj3DkYkcloU2yDj8NFn5rINa8goJxEE8E4cg==
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"encodedImage":"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","payload":"00020101021226820014br.gov.bcb.pix2560qrpix-h.bradesco.com.br/9d36b84f-c70b-478f-b95c-12729b90ca25520400005303986540510.005802BR5905ASAAS6009JOINVILLE62070503***6304D5AC","expirationDate":"2025-04-03
+        23:59:59"}'
+  recorded_at: Thu, 03 Apr 2025 18:23:30 GMT
 recorded_with: VCR 6.3.1

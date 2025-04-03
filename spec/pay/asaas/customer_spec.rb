@@ -36,6 +36,7 @@ RSpec.describe Pay::Asaas::Customer do
       expect(user.payment_processor.charges.first.amount).to eq(10_00)
       expect(user.payment_processor.charges.first.class).to eq(Pay::Asaas::Charge)
       expect(user.payment_processor.charges.first.payment_method_type).to eq("pix")
+      expect(user.payment_processor.charges.first.pix_code).to be_present
     end
   end
 end
