@@ -61,6 +61,8 @@ module Pay
           payment_method_type: "pix",
         }
 
+        attrs = attrs.merge(options[:attrs]) if options[:attrs]
+
         charge = charges.find_or_initialize_by(processor_id: transaction["id"])
         charge.update(attrs)
         charge

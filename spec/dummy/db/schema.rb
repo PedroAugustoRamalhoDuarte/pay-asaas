@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_27_132744) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_03_185846) do
+  create_table "orders", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pay_charges", force: :cascade do |t|
     t.bigint "customer_id", null: false
     t.bigint "subscription_id"
@@ -25,7 +31,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_27_132744) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type"
+    t.integer "order_id", null: false
     t.index ["customer_id", "processor_id"], name: "index_pay_charges_on_customer_id_and_processor_id", unique: true
+    t.index ["order_id"], name: "index_pay_charges_on_order_id"
     t.index ["subscription_id"], name: "index_pay_charges_on_subscription_id"
   end
 
@@ -120,6 +128,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_27_132744) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "pay_charges", "orders"
   add_foreign_key "pay_charges", "pay_customers", column: "customer_id"
   add_foreign_key "pay_charges", "pay_subscriptions", column: "subscription_id"
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"
