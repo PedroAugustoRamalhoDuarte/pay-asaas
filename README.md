@@ -12,10 +12,9 @@ The goal for the first implementation is to support the following features:
 - [x] Customer creation
 - [x] Make a payment with PIX
 - [x] Support basic webhooks needed for the payment process
+- [x] Pix QRCode sync
 
 Following features will be implemented in the future and I will be happy to receive contributions:
-
-- [ ] Pix QRCode sync
 - [ ] Credit Cards
 - [ ] Subscriptions
 
@@ -67,6 +66,8 @@ This first version of the gem will only support PIX payments.
 
 ```ruby
 @user.payment_processor.charge(15_00)
+
+@user.payment_processor.charge(15_00, { attrs: { order_id: @order.id } })
 ```
 
 ## Webhooks
