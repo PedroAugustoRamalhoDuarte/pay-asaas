@@ -37,7 +37,7 @@ bundle add pay-asaas;
 ```yml
 asaas:
   api_key: xxxx
-  api_url: https://sandbox.asaas.com/api/v3 # or https://www.asaas.com/api/v3
+  api_url: https://api-sandbox.asaas.com/v3 # or 	https://api.asaas.com/v3
   webhook_access_key: xxxx
 ```
 
@@ -81,6 +81,16 @@ domain:
 
 > For now we listen to the events that are important for pix transactions. For more configuration options
 > see: https://github.com/pay-rails/pay/blob/main/docs/7_webhooks.md
+
+## Debugging
+
+To debug HTTP requests made by our gem, which uses the httparty library, you can enable logging of all outgoing HTTP calls. Just add the following line to one of your initializers:
+
+```ruby
+HTTParty::Basement.debug_output($stdout)
+```
+
+This will print the full request and response details to the console, making it easier to troubleshoot issues during development.
 
 ## Development
 
