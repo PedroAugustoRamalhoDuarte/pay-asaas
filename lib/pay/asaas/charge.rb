@@ -10,13 +10,18 @@ module Pay
       def self.sync(charge_id, object: nil, try: 0, retries: 1)
         object ||= Pay::Asaas::Api::Payment.find(id: charge_id)
 
-        pay_customer = Pay::Customer.find_by(processor: :asaas, processor_id: object.customer)
+        customer_processor_id = get_attribute(object, :customer)
+        charge_processor_id = get_attribute(object, :id)
+        pay_customer = Pay::Customer.find_by(processor: :asaas, processor_id: customer_processor_id)
+
+        # rubocop:disable Layout/LineLength
         if pay_customer.blank?
           Rails.logger.debug do
-            "Pay::Customer #{object.customer} is not in the database while syncing Asaas Charge #{object.id}"
+            "Pay::Customer #{customer_processor_id} is not in the database while syncing Asaas Charge #{charge_processor_id}"
           end
           return
         end
+        # rubocop:enable Layout/LineLength
 
         attrs = {
           amount: get_attribute(object, :value).to_f * 100,
@@ -24,13 +29,13 @@ module Pay
         }
 
         # Update or create the charge
-        if (pay_charge = pay_customer.charges.find_by(processor_id: object.id))
+        if (pay_charge = pay_customer.charges.find_by(processor_id: charge_processor_id))
           pay_charge.with_lock do
             pay_charge.update!(attrs)
           end
           pay_charge
         else
-          pay_customer.charges.create!(attrs.merge(processor_id: object.id))
+          pay_customer.charges.create!(attrs.merge(processor_id: charge_processor_id))
         end
       rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotUnique
         try += 1
