@@ -28,14 +28,12 @@ module Pay
           status: get_attribute(object, :status),
         }
 
-        # Update or create the charge
+        # Update the charge
         if (pay_charge = pay_customer.charges.find_by(processor_id: charge_processor_id))
           pay_charge.with_lock do
             pay_charge.update!(attrs)
           end
           pay_charge
-        else
-          pay_customer.charges.create!(attrs.merge(processor_id: charge_processor_id))
         end
       rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotUnique
         try += 1
@@ -61,7 +59,7 @@ module Pay
       end
 
       def refund!(amount_to_refund)
-        raise NotImplementedError, "Refunding charges is not supported yet by the Asaas fake processor"
+        raise NotImplementedError, "Refunding charges is not supported yet by the Asaas processor"
       end
 
       def sync_pix_qr_code
