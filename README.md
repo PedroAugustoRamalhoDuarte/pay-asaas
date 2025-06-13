@@ -72,15 +72,24 @@ This first version of the gem will only support PIX payments.
 
 ## Webhooks
 
-The gem will provide a controller to handle the webhooks.
+The gem provides a built-in controller to handle webhooks from Asaas. These webhooks are essential for keeping your payment records in sync with Asaas's systems.
 
-To configure webhooks on your payment processor, use the following URLs while replacing example.org with your own
-domain:
+### Configuration
 
-- Asaas: https://example.org/pay/webhooks/asaas
+To configure webhooks in your Asaas dashboard, use the following URL (replace `example.org` with your domain):
+
+- **Asaas Webhook URL**: `https://example.org/pay/webhooks/asaas`
+
+### Supported Events
+
+The main goal of the webhooks right now is to sync payment statuses.
 
 > For now we listen to the events that are important for pix transactions. For more configuration options
 > see: https://github.com/pay-rails/pay/blob/main/docs/7_webhooks.md
+
+### Verify Webhooks
+
+All incoming webhooks from Asaas will be verified using the `webhook_access_key` provided in the gem configuration.
 
 ## Debugging
 
