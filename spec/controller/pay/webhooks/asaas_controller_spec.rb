@@ -1,7 +1,7 @@
 require "spec_helper"
 require "pay/engine"
 
-RSpec.describe "Pay::Webhooks::AsaasController", type: :request do
+RSpec.describe Pay::Webhooks::AsaasController, type: :request do
   include Pay::Engine.routes.url_helpers
 
   describe "POST #create" do
@@ -13,7 +13,7 @@ RSpec.describe "Pay::Webhooks::AsaasController", type: :request do
           "id" => "pay_123",
           "customer" => "cus_123",
           "value" => 1000.0,
-          "status" => "CONFIRMED",
+          "status" => "RECEIVED",
         },
         # There are more fields in the webhook payload
       }
@@ -41,6 +41,13 @@ RSpec.describe "Pay::Webhooks::AsaasController", type: :request do
           amount: 10,
           order_id: order.id,
         )
+        expect { post "/pay/webhooks/asaas", params: params }.to change(Pay::Webhook, :count).by(1)
+        expect(response).to have_http_status(:success)
+      end
+    end
+
+    context "when does not have charge in the database" do
+      it "returns success and created Pay::Webhook" do
         expect { post "/pay/webhooks/asaas", params: params }.to change(Pay::Webhook, :count).by(1)
         expect(response).to have_http_status(:success)
       end
