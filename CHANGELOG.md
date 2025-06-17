@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.1.2] - 2025-06-17
+
+- Fixes credentials configuration for api key and api url
+
 ## [0.1.1] - 2025-06-13
 
 - Fixes payment sync in webhooks
