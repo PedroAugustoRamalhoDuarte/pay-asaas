@@ -10,8 +10,8 @@ module Pay::Asaas
       attr_accessor :api_key, :base_url
 
       def initialize
-        @api_key = ENV["ASAAS_API_KEY"]
-        @base_url = ENV["ASAAS_API_URL"] || "https://sandbox.asaas.com/api/v3"
+        @api_key = Pay::Asaas.api_key
+        @base_url = Pay::Asaas.api_url || "https://sandbox.asaas.com/api/v3"
       end
 
       def validate!
